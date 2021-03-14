@@ -1,0 +1,43 @@
+.carousel-item, .picsum-img-wrapper {
+    height: 100vh;
+    min-height: 350px;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+  ngb-carousel{
+    background-color: black;
+  }
+
+  h1 {
+    font-family: 'graffiti-heading-claen' , 'arial', sans-serif;
+    font-size: 50px;
+    text-align: left;
+  }
+  p {
+    font-size: 20px;
+  }
+
+  .carousel-caption {
+    right: auto;
+    text-align:left;
+    padding-right: 60px;
+  }
+
+
+  @media  (min-width: 768px) {
+    h1 {
+      font-size: 100px;
+    }
+    p {
+      font-size: 35px;
+      text-align: left;
+    }
+    .carousel-caption {
+      bottom: 20%;
+      left: 10%;
+      padding: 0 50px 0 100px;
+    }
+}

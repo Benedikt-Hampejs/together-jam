@@ -1,0 +1,31 @@
+.container {
+    margin-top: 130px;
+    margin-bottom: 100px;
+}
+.bgimg {
+    padding-bottom: 30px;
+}
+
+@media (min-width: 767.98px) {
+    .container {
+        margin-top: 130px;
+    }
+    .bgimg {
+        padding-bottom: 200px;
+    }
+}
+
+.bgimg::after {
+    content: "";
+    background: url(/assets/eye.jpeg);
+    background-size:     cover;                      /* <------ */
+    background-repeat:   no-repeat;
+    background-position: center center;  
+    opacity: 0.1;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+  }

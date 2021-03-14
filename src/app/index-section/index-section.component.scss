@@ -1,0 +1,51 @@
+.row {
+    color: black;
+}
+h2 {
+    font-family: 'graffiti-heading-claen' , 'arial', sans-serif;
+    font-size: 50px;
+}
+
+img {
+    object-fit:cover;
+    width: inherit;
+    
+}
+
+
+.shadow-lg {
+    box-shadow: 10px 5px 5px black;
+}
+
+.col-lg-5 {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+@media (min-width: 768px) {
+    .col-lg-5.order-lg-1 {
+        position: relative;
+        right: 15px;
+        padding-left: 0;
+        padding-right: 15px;
+
+    }
+    .col-lg-7.order-lg-2 {
+        position: relative;
+        left: 15px;
+    }
+    .col-lg-5:not(.order-lg-1) {
+        padding-right: 0;
+        padding-left: 15px;
+    }
+}
+@media (min-width: 1200px) {
+    .col-lg-5.order-lg-1 {
+        position: relative;
+        right: auto;
+    }
+    .col-lg-7.order-lg-2 {
+        position: relative;
+        left: auto;
+    }
+}

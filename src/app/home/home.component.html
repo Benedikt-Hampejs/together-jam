@@ -1,0 +1,34 @@
+<app-carousel></app-carousel>
+
+
+<!-- Marketing messaging and featurettes
+================================================== -->
+<!-- Wrap the rest of the page in another container to center all the content. -->
+
+<div class="container-fluid marketing">
+
+  <!-- START THE FEATURETTES -->
+
+  <app-index-section [imagesrc]="'assets/together.webp'" [sectionlink]="'/about'">
+    <header>Das Event</header>
+    <content>Together 2020 ist die größte Street Art und Graffiti Veranstaltung, die es in Wels jemals gegeben hat. Ein internationales Teilnehmerfeld aus Künstler/Innen gestaltet an drei Tagen die Flächen im Schlachthof Wels und bei Möglichkeit umliegende Wände. Rund um die Veranstaltung wird ein umfangreiches Rahmenprogramm angeboten, welches unter anderem einen Graffitiworkshop, Zeichenworkshop und Aufklärung beinhaltet.</content>
+    <footer>Zum Event</footer>
+  </app-index-section>
+
+  <app-index-section [even]="true" [imagesrc]="'assets/together.webp'" [sectionlink]="'/register'">
+    <header>Anmelden</header>
+    <content>Melde dich jetzt für das Together Jam Event 2021 an</content>
+    <footer>Jetzt anmelden</footer>
+  </app-index-section>
+
+  <app-index-section [imagesrc]="'assets/gallerie.jpg'" [sectionlink]="'/gallerie'">
+    <header>Galerie</header>
+    <content>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, cons</content>
+    <footer>Zur Galerie</footer>
+  </app-index-section>
+
+  <!--<app-partner-section></app-partner-section>-->
+  <app-contact-section></app-contact-section>
+  <!-- /END THE FEATURETTES -->
+
+</div><!-- /.container -->

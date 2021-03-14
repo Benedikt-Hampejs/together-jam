@@ -1,0 +1,15 @@
+<div [ngClass]="{'even' : even}" class="pl-3 pr-3"  >
+    <div class="container">
+        <div class="row featurette">
+            <div class="col-lg-7 shadow-lg mb-5 rounded pb-5"  [ngClass]="{'order-md-2' : even}" aos>
+                <h2 class="featurette-heading border-bottom"><ng-content select="header"></ng-content></h2>
+                <p class="lead"><ng-content select="content" ></ng-content></p>
+                <a routerLink='{{sectionlink}}' class="btn btn-primary"><ng-content select="footer"></ng-content></a>
+            </div>
+            <div class="col-lg-5" [ngClass]="{'order-lg-1' : even}" aos>
+            
+            <img class="shadow-lg mb-5 rounded"  src="{{imagesrc}}" height="400px" width="400px"/>
+            </div>
+        </div>
+    </div>
+</div>
