@@ -11,12 +11,15 @@ import {RequestMail} from '../model/mailModel'
 export class ContactSectionComponent implements OnInit {
 
   mail: RequestMail = {};
+  mailSent: String = '' 
 
   constructor(private emailService: EmailService) {}
 
   ngOnInit(): void {}
 
   sendRequest() {
-    this.emailService.sendMailRequest(this.mail).subscribe();
+    this.emailService.sendMailRequest(this.mail).subscribe(
+      response => this.mailSent = 'success'
+    , response => this.mailSent = 'error');
   }
 }

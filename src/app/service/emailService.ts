@@ -11,13 +11,13 @@ export class EmailService {
   constructor(private http: HttpClient) {
   }
 
-  sendMailRequest(mail: any): Observable<RequestMail> {
-    return this.http.post<RequestMail>(BASE_URL + "request", mail);
+  sendMailRequest(mail: any) {
+    return this.http.post(BASE_URL + "request", mail, {observe: 'response', responseType: 'text'});
   }
 
-  /*sendMailSign(mail: any): Observable<Task> {
-    return this.http.post<Task>(BASE_URL + "sign", mail);
-  }*/
+  sendMailRegister(mail: any) {
+    return this.http.post(BASE_URL + "register", mail, {observe: 'response', responseType: 'text'});
+  }
 
 
 }

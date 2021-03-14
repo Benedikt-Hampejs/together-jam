@@ -4,3 +4,9 @@ export interface RequestMail {
     subject?: String;
     message?: String;
 }
+
+export interface RegisterMail {
+    artistName?: String;
+    email?: String;
+    portrait?: File;
+}

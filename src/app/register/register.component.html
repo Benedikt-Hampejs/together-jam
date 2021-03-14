@@ -3,24 +3,39 @@
         <div class="offset-md-1 col-md-10 shadow-lg rounded pt-3 bgimg">
             <h2>Anmelden</h2>
             <p>Melde dich jetzt für das Together Jam 2021 an</p>
-            <form role="form" method="post" id="contactForm" name="contact-form">
+            <div *ngIf="mailSent==='success' else mailError">
+                <div class="alert alert-success" role="alter">
+                    Deine Anmeldung ist erfolgreich an uns versendet worden. Akzeptiere in deinem Postfach bitte die Bestätigung um die Anmeldung abzuschließen. Überprüfe auch den Spam Ordner. Falls du die Einladung nicht findest kontaktiere bitte 'togetherjam@gmail.com'
+                </div>
+            </div>
+            <form role="form" (ngSubmit)="sendRequest()" #form="ngForm">
                 <!-- Name -->
                 <div class="form-group label-floating">
                 <label class="control-label" for="name">Künstlername *</label>
-                <input class="form-control" id="name" type="text" name="name" required data-error="Please enter your name">
+                <input class="form-control" id="name" type="text" name="name" required data-error="Please enter your name" [(ngModel)]="mail.artistName">
                 <div class="help-block with-errors"></div>
                 </div>
                 <!-- email -->
                 <div class="form-group label-floating">
                 <label class="control-label" for="email">Email *</label>
-                <input class="form-control" id="email" type="email" name="email" required data-error="Please enter your Email">
+                <input class="form-control" id="email" type="email" name="email" required data-error="Please enter your Email" [(ngModel)]="mail.email">
                 <div class="help-block with-errors"></div>
                 </div>
-                <button class="btn btn-primary" type="submit" id="form-submit"> Anmelden</button>
+                <div class="form-group label-floating">
+                    <label class="control-label" for="email">Foto des Künstlers *</label>
+                    <input type="file" class="form-control-file" id="portrait" name="portrait" 
+                    required data-error="Please upload a foto" [(ngModel)]="mail.portrait">
+                    <div class="help-block with-errors"></div>
+                    </div>
+                <button [disabled]="!form.valid" class="btn btn-primary" type="submit" id="form-submit"> Anmelden</button>
             </form>
         </div>
 
     </div>
 </div>
 
-    
+<ng-template #mailError>
+    <div *ngIf="mailSent==='error'" class="alert alert-danger" role="alter">
+        Deine Anfrage konnte nicht versendet werden bitte versuche es erneut oder kontaktiere 'togetherjam@gmail.com'
+    </div>
+</ng-template>

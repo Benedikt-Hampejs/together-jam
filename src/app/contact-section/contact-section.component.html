@@ -6,6 +6,11 @@
                 <p>Falls du fragen bezüglich des Events hast oder uns beauftragen möchtest, kontaktiere uns.</p>
             </div>
             <div class="col-md-7">
+                <div *ngIf="mailSent==='success' else mailError">
+                    <div class="alert alert-success" role="alter">
+                        Dein anliegen wurde erfolgreich an uns versendet. Bitte kontrolliere deine Mails (auch im Spam Ordner). Falls du keine Mail erhalten hast kontaktiere bitte 'togetherjam@gmail.com'.
+                    </div>
+                </div>
                 <form role="form" (ngSubmit)="sendRequest()" #form="ngForm">
                     <!-- Name -->
                     <div class="form-group label-floating">
@@ -39,3 +44,8 @@
     </div>
 </div>
 
+<ng-template #mailError>
+<div *ngIf="mailSent==='error'" class="alert alert-danger" role="alter">
+    Deine Anfrage konnte nicht versendet werden bitte versuche es erneut oder kontaktiere 'togetherjam@gmail.com'
+</div>
+</ng-template>
